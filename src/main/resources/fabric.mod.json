@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "creakingdepths",
+  "version": "${version}",
+
+  "name": "CreakingDepths",
+  "description": "",
+  "authors": [],
+  "contact": {},
+
+  "license": "LGPL-3.0",
+  "icon": "assets/creakingdepths/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": ["io.github.redvortexdev.creakingdepths.client.DepthsClient"],
+    "main": ["io.github.redvortexdev.creakingdepths.Depths"]
+  },
+
+  "mixins": [
+    "creakingdepths.mixins.json"
+    ,{
+      "config": "creakingdepths.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": ">1.21.1"
+  }
+}
