@@ -49,7 +49,6 @@ public abstract class MixinCreaking extends HostileEntity {
     // Override tryAttack with a neck snap.
     @Inject(method = "tryAttack", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/mob/HostileEntity;tryAttack(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/Entity;)Z"))
     private void createCreakingAttributes(CallbackInfoReturnable<DefaultAttributeContainer.Builder> cir, @Local(ordinal = 0, argsOnly = true) Entity entity, @Local(ordinal = 0, argsOnly = true) ServerWorld world) {
-        cir.cancel();
         // I wish I knew a cleaner way to do this.
         for (ServerPlayerEntity serverPlayerEntity : world.getPlayers()) {
             serverPlayerEntity.networkHandler.sendPacket(new PlaySoundS2CPacket(RegistryEntry.of(SoundEvents.ENTITY_CREAKING_ATTACK), SoundCategory.HOSTILE, entity.getX(), entity.getY(), entity.getZ(), 1F, 1F, 0));
