@@ -1,3 +1,5 @@
 {
-  "death.attack.neck_break": "%1$s had their neck snapped"
+  "death.attack.neck_break": "%1$s had their neck snapped",
+  "gamerule.doCreakingSpawning": "Spawn Creakings",
+  "gamerule.doCreakingSpawning.description": "Whether a Creaking Heart should spawn a Creaking at night."
 }

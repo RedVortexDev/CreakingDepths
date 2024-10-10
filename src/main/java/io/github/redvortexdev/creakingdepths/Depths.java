@@ -8,6 +8,6 @@ public class Depths implements ModInitializer {
 
     @Override
     public void onInitialize() {
-
+        ModGameRules.initialize();
     }
 }
